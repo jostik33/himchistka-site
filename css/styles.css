@@ -390,8 +390,10 @@ ul {
 
 .hero-bg {
   position: absolute;
-  inset: 0;
+  /* Запас сверху — под параллакс при скролле */
+  inset: -80px 0 0;
   z-index: 0;
+  will-change: transform;
 }
 
 .hero-bg img {
@@ -1147,6 +1149,102 @@ textarea {
   }
 }
 
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    /* none, а не translateY(0): иначе body остаётся containing block для fixed-элементов */
+    transform: none;
+  }
+}
+
+@keyframes vtOut {
+  to {
+    opacity: 0;
+    transform: translateY(-16px) scale(0.995);
+  }
+}
+
+@keyframes vtIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+}
+
+/* ---------- Переходы между страницами ---------- */
+
+/* Chrome и Edge: нативный кросс-документный переход */
+
+@view-transition {
+  navigation: auto;
+}
+
+.site-header {
+  view-transition-name: site-header;
+}
+
+.site-header .logo-mark {
+  view-transition-name: logo-mark;
+}
+
+::view-transition-old(root) {
+  animation: vtOut 0.3s var(--ease) both;
+}
+
+::view-transition-new(root) {
+  animation: vtIn 0.42s var(--ease) both;
+}
+
+/* Шапка переезжает на место без мигания, логотип морфится */
+
+::view-transition-old(site-header),
+::view-transition-new(site-header) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Safari и Firefox без View Transitions: короткое затухание */
+
+@supports not (view-transition-name: none) {
+  .js body {
+    animation: pageIn 0.45s var(--ease) both;
+  }
+
+  .js.is-leaving body {
+    /* снимаем fill-mode анимации, иначе она перебивает затухание */
+    animation: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.16s ease, transform 0.16s ease;
+  }
+}
+
+/* ---------- Индикатор прокрутки ---------- */
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 60;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--lime), var(--emerald));
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.12s linear;
+  pointer-events: none;
+}
+
+/* Якоря не прячутся под прилипшей шапкой */
+
+main [id] {
+  scroll-margin-top: 96px;
+}
+
 /* ---------- Утилиты ---------- */
 
 .muted {
@@ -1320,5 +1418,15 @@ textarea {
   .js .reveal {
     opacity: 1;
     transform: none;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+
+  .scroll-progress {
+    display: none;
   }
 }
