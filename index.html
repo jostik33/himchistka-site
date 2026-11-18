@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
+  <script>document.documentElement.classList.add("js");</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Химчистка мебели на дому в [городе] — выезд, гарантия результата</title>
   <meta name="description" content="Профессиональная химчистка диванов, ковров, матрасов и кресел на дому в [городе]. Безопасные средства, выезд в день обращения, гарантия результата. Рассчитайте стоимость за 2 минуты.">
@@ -10,13 +11,15 @@
   <meta property="og:title" content="Химчистка мебели на дому в [городе]">
   <meta property="og:description" content="Диваны, ковры, матрасы и кресла. Выезд на дом, безопасные средства, гарантия результата.">
   <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="https://example.com/images/hero.jpg">
   <meta property="og:locale" content="ru_RU">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230c3b31'/%3E%3Ctext x='32' y='44' font-family='Arial' font-size='34' font-weight='bold' fill='%23d9f26b' text-anchor='middle'%3EЧ%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержанию</a>
 
-  <header class="site-header">
+  <header class="site-header" data-header>
     <div class="container header-inner">
       <a class="logo" href="index.html">
         <span class="logo-mark" aria-hidden="true">Ч</span>
@@ -42,8 +45,12 @@
 
   <main id="main">
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
+      <div class="hero-bg" aria-hidden="true">
+        <img src="images/hero.jpg" alt="" width="2000" height="1125">
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
           <span class="eyebrow">Выездная химчистка в [городе]</span>
           <h1>Вернём мебели чистый вид — без вывоза из дома</h1>
           <p class="lead">
@@ -53,7 +60,7 @@
 
           <div class="hero-actions">
             <a class="btn btn--primary" href="#contacts">Рассчитать стоимость</a>
-            <a class="btn btn--ghost" href="tel:+79000000000">Позвонить</a>
+            <a class="btn btn--light" href="tel:+79000000000">Позвонить</a>
           </div>
 
           <ul class="hero-points">
@@ -94,87 +101,87 @@
       </div>
     </section>
 
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Диваны</span><span>Ковры</span><span>Матрасы</span><span>Кресла</span><span>Стулья</span><span>Офисы</span>
+        <span>Диваны</span><span>Ковры</span><span>Матрасы</span><span>Кресла</span><span>Стулья</span><span>Офисы</span>
+      </div>
+    </div>
+
     <section class="section" id="services">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <span class="eyebrow">Услуги</span>
           <h2>Что чистим</h2>
           <p>Под каждую задачу — своя технология и средства. Цена зависит от размера, ткани и степени загрязнения.</p>
         </div>
 
-        <div class="grid grid--4">
-          <article class="card service-card">
-            <div class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 11V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"/>
-                <path d="M3 13a1.5 1.5 0 0 1 3 0v2h12v-2a1.5 1.5 0 0 1 3 0v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                <path d="M6 18v2M18 18v2"/>
-              </svg>
+        <div class="grid grid--services">
+          <article class="card service-card reveal">
+            <div class="service-media">
+              <img src="images/divan.jpg" alt="Светлый угловой диван в гостиной" width="1200" height="900" loading="lazy">
             </div>
-            <h3>Диваны</h3>
-            <p>Прямые, угловые и модульные. Убираем пятна, запахи и следы от животных.</p>
-            <a class="card-link" href="services/divan.html">Подробнее →</a>
+            <div class="service-body">
+              <h3>Диваны</h3>
+              <p>Прямые, угловые и модульные. Убираем пятна, запахи и следы от животных.</p>
+              <a class="card-link" href="services/divan.html">Подробнее →</a>
+            </div>
           </article>
 
-          <article class="card service-card">
-            <div class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="4" y="7" width="16" height="11" rx="2"/>
-                <path d="M7 10h10M7 13h10M7 16h10M4 7l-1-2M8 7l-1-2M12 7l-1-2M16 7l-1-2M20 7l-1-2"/>
-              </svg>
+          <article class="card service-card reveal" style="--delay:.08s">
+            <div class="service-media">
+              <img src="images/kover.jpg" alt="Ковёр с орнаментом на полу в светлой комнате" width="900" height="1125" loading="lazy">
             </div>
-            <h3>Ковры</h3>
-            <p>Чистка на дому и с вывозом. Работаем с ворсом, шерстью и синтетикой.</p>
-            <a class="card-link" href="services/kover.html">Подробнее →</a>
+            <div class="service-body">
+              <h3>Ковры</h3>
+              <p>Чистка на дому и с вывозом. Работаем с ворсом, шерстью и синтетикой.</p>
+              <a class="card-link" href="services/kover.html">Подробнее →</a>
+            </div>
           </article>
 
-          <article class="card service-card">
-            <div class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="8" width="18" height="9" rx="2"/>
-                <path d="M6 8V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/>
-                <path d="M6 12h12M6 15h12"/>
-              </svg>
+          <article class="card service-card reveal" style="--delay:.16s">
+            <div class="service-media">
+              <img src="images/matras.jpg" alt="Белая кровать с чистым матрасом в светлой спальне" width="1200" height="800" loading="lazy">
             </div>
-            <h3>Матрасы</h3>
-            <p>Глубокая чистка с двух сторон, борьба с пылью, пятнами и аллергенами.</p>
-            <a class="card-link" href="services/matras.html">Подробнее →</a>
+            <div class="service-body">
+              <h3>Матрасы</h3>
+              <p>Глубокая чистка с двух сторон, борьба с пылью, пятнами и аллергенами.</p>
+              <a class="card-link" href="services/matras.html">Подробнее →</a>
+            </div>
           </article>
 
-          <article class="card service-card">
-            <div class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M7 11V9a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/>
-                <path d="M5 20v-4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4"/>
-                <path d="M5 16h14M9 20v-2M15 20v-2"/>
-              </svg>
+          <article class="card service-card reveal" style="--delay:.24s">
+            <div class="service-media">
+              <img src="images/kreslo.jpg" alt="Серое кресло с мягкой обивкой в интерьере" width="1000" height="1250" loading="lazy">
             </div>
-            <h3>Кресла и стулья</h3>
-            <p>Офисная и домашняя мебель, обивка, подлокотники и сиденья.</p>
-            <a class="card-link" href="services/kreslo.html">Подробнее →</a>
+            <div class="service-body">
+              <h3>Кресла и стулья</h3>
+              <p>Офисная и домашняя мебель, обивка, подлокотники и сиденья.</p>
+              <a class="card-link" href="services/kreslo.html">Подробнее →</a>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section--soft" id="how">
+    <section class="section section--dark" id="how">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <span class="eyebrow">Как работаем</span>
           <h2>Три шага до чистой мебели</h2>
           <p>Без сложных согласований: заявка, выезд, результат.</p>
         </div>
 
         <div class="steps">
-          <div class="step">
+          <div class="step reveal">
             <h3>Заявка</h3>
             <p>Оставляете номер или пишете в мессенджер. Уточняем, что чистить и когда удобно приехать.</p>
           </div>
-          <div class="step">
+          <div class="step reveal" style="--delay:.08s">
             <h3>Расчёт и выезд</h3>
             <p>Называем точную цену до начала работ. Мастер приезжает со своим оборудованием и средствами.</p>
           </div>
-          <div class="step">
+          <div class="step reveal" style="--delay:.16s">
             <h3>Результат</h3>
             <p>Показываем результат, объясняем уход. Оплата — после того как вы приняли работу.</p>
           </div>
@@ -184,25 +191,29 @@
 
     <section class="section">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <span class="eyebrow">Почему мы</span>
           <h2>Аккуратно, безопасно, с гарантией</h2>
         </div>
 
         <div class="grid grid--4">
-          <div class="feature">
+          <div class="feature reveal">
+            <div class="feature-mark" aria-hidden="true">✓</div>
             <h3>Безопасные средства</h3>
             <p>Подбираем состав под ткань. Не оставляем разводов и резкого запаха.</p>
           </div>
-          <div class="feature">
+          <div class="feature reveal" style="--delay:.08s">
+            <div class="feature-mark" aria-hidden="true">✓</div>
             <h3>Своё оборудование</h3>
             <p>Экстрактор, парогенератор и профессиональные реагенты — привозим с собой.</p>
           </div>
-          <div class="feature">
+          <div class="feature reveal" style="--delay:.16s">
+            <div class="feature-mark" aria-hidden="true">✓</div>
             <h3>Гарантия результата</h3>
             <p>Если пятно осталось — переделаем бесплатно или вернём деньги.</p>
           </div>
-          <div class="feature">
+          <div class="feature reveal" style="--delay:.24s">
+            <div class="feature-mark" aria-hidden="true">✓</div>
             <h3>Удобное время</h3>
             <p>Работаем вечером и в выходные, чтобы не подстраивать день под мастера.</p>
           </div>
@@ -212,13 +223,13 @@
 
     <section class="section section--soft" id="prices">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <span class="eyebrow">Цены</span>
           <h2>Стоимость зависит от размера и загрязнения</h2>
           <p>Ниже — ориентиры. Точную цену называем до начала работ. Колонку «Стоимость» замените на свой прайс.</p>
         </div>
 
-        <table class="price-table">
+        <table class="price-table reveal">
           <thead>
             <tr>
               <th scope="col">Услуга</th>
@@ -258,24 +269,24 @@
 
     <section class="section" id="reviews">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <span class="eyebrow">Отзывы</span>
           <h2>Что говорят клиенты</h2>
           <p>Замените демо-тексты на реальные отзывы из Яндекс Карт и после первых заказов.</p>
         </div>
 
         <div class="grid grid--3">
-          <article class="review">
+          <article class="review reveal">
             <div class="stars" aria-label="Оценка 5 из 5">★★★★★</div>
             <p>«Демо-отзыв. Здесь будет реальная история клиента: что чистили, сколько заняло и какой результат получился».</p>
             <div class="review-author">Имя клиента, [район]</div>
           </article>
-          <article class="review">
+          <article class="review reveal" style="--delay:.08s">
             <div class="stars" aria-label="Оценка 5 из 5">★★★★★</div>
             <p>«Демо-отзыв. Добавьте отзыв после первого заказа — с фото „до и после“ он работает лучше всего».</p>
             <div class="review-author">Имя клиента, [район]</div>
           </article>
-          <article class="review">
+          <article class="review reveal" style="--delay:.16s">
             <div class="stars" aria-label="Оценка 5 из 5">★★★★★</div>
             <p>«Демо-отзыв. Реальные отзывы повышают доверие и снижают цену заявки в рекламе».</p>
             <div class="review-author">Имя клиента, [район]</div>
@@ -286,29 +297,29 @@
 
     <section class="section section--soft" id="faq">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <span class="eyebrow">Вопросы</span>
           <h2>Частые вопросы</h2>
         </div>
 
         <div class="faq">
-          <details>
+          <details class="reveal">
             <summary>Сколько сохнет мебель после химчистки?</summary>
             <p>Обычно 4–8 часов. Точный срок зависит от ткани, влажности и температуры в помещении. Мастер подскажет, когда можно пользоваться мебелью.</p>
           </details>
-          <details>
+          <details class="reveal">
             <summary>Средства безопасны для детей и животных?</summary>
             <p>Да, мы используем профессиональные составы с последующей промывкой. После высыхания мебелью можно пользоваться как обычно.</p>
           </details>
-          <details>
+          <details class="reveal">
             <summary>Можно ли вывести старое пятно?</summary>
             <p>Чаще всего да. Но результат зависит от типа ткани и давности пятна. Если пятно не уйдёт полностью, мастер скажет об этом до начала работ.</p>
           </details>
-          <details>
+          <details class="reveal">
             <summary>Нужно ли что-то готовить к приезду мастера?</summary>
             <p>Достаточно освободить доступ к мебели и убрать с неё вещи. Всё остальное — оборудование, средства и защита пола — у мастера с собой.</p>
           </details>
-          <details>
+          <details class="reveal">
             <summary>Как оплатить?</summary>
             <p>Наличными или переводом после выполнения работ. Стоимость фиксируем до начала чистки.</p>
           </details>
@@ -318,7 +329,7 @@
 
     <section class="section">
       <div class="container">
-        <div class="cta">
+        <div class="cta reveal">
           <div>
             <h2>Не откладывайте на потом</h2>
             <p>Оставьте заявку — перезвоним, уточним детали и назовём точную цену. Без навязывания услуг.</p>
@@ -332,7 +343,7 @@
 
     <section class="section section--soft" id="contacts">
       <div class="container contact-grid">
-        <div>
+        <div class="reveal">
           <span class="eyebrow">Контакты</span>
           <h2>Свяжитесь удобным способом</h2>
           <p class="muted">Работаем в [городе] и ближайших районах. Уточните зону выезда при звонке.</p>
@@ -346,7 +357,7 @@
           </ul>
         </div>
 
-        <form class="contact-form" data-lead-form>
+        <form class="contact-form reveal" style="--delay:.1s" data-lead-form>
           <h3 class="mt-0">Оставить заявку</h3>
 
           <div class="field">
@@ -428,6 +439,7 @@
     "name": "ЧистоДом",
     "description": "Выездная химчистка диванов, ковров, матрасов и кресел в [городе].",
     "url": "https://example.com/",
+    "image": "https://example.com/images/hero.jpg",
     "telephone": "+7-900-000-00-00",
     "priceRange": "₽₽",
     "areaServed": "[город]",
