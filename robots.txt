@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-# После публикации замените example.com на реальный домен
-Sitemap: https://example.com/sitemap.xml
+# Домен сайта
+Sitemap: https://jostik33.github.io/himchistka-site/sitemap.xml
